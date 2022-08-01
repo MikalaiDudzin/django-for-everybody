@@ -1,6 +1,5 @@
 from django.contrib import admin
-
-from autos.models import Make, Auto
+from .models import Make, Auto
 
 # Register your models here.
 

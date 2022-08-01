@@ -4,8 +4,8 @@ from django.views import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from autos.models import Auto, Make
-from autos.forms import MakeForm
+from .models import Auto, Make
+from .forms import MakeForm
 
 # Create your views here.
 
@@ -109,12 +109,3 @@ class AutoDelete(LoginRequiredMixin, DeleteView):
     model = Auto
     fields = '__all__'
     success_url = reverse_lazy('autos:all')
-
-# We use reverse_lazy rather than reverse in the class attributes
-# because views.py is loaded by urls.py and in urls.py as_view() causes
-# the constructor for the view class to run before urls.py has been
-# completely loaded and urlpatterns has been processed.
-
-# References
-
-# https://docs.djangoproject.com/en/3.0/ref/class-based-views/generic-editing/#createview
