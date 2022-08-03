@@ -78,6 +78,8 @@ INSTALLED_APPS = [
     'util.apps.UtilConfig',
     'well.apps.WellConfig',
     'tagme.apps.TagmeConfig',
+
+    'polls.apps.PollsConfig',
 ]
 
 # When we get to crispy forms :)
